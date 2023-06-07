@@ -39,7 +39,13 @@ class ApiControler extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Post;
+        $data->title=$request->title;
+        $data->body=$request->body;
+        $data->img_path=$request->img_path;
+        $data->is_published=$request->is_published;
+        $data->save();
+        return view('wellcome');
     }
 
     /**
